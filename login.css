@@ -1,0 +1,176 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+/*LOGIN/SIGNUP BOX*/
+
+.contentBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+
+    position: absolute;
+    top: 22vh;
+}
+
+.loginBox, .signupBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*LOGO*/
+
+.logo
+{
+    width: 250px;
+    margin-bottom: 30px;
+}
+
+/*INPUT BOXES*/
+
+input {
+    font-family: BPreplayBold;
+    border: 3.5px solid #bac1db;
+    border-radius: 10px;
+    color: #8b96bd;
+    width: 280px;
+    padding: 10px 10px;
+    text-align: center;
+    transition: opacity .4s ease;
+    margin-bottom: 15px;
+}
+
+input:hover::placeholder{
+    opacity: .3;
+    cursor: pointer;
+}
+
+input::placeholder {
+    transition: opacity .4s ease;
+    font-family: BPreplayBold;
+    opacity: .6;
+}
+
+input:hover {
+    cursor: pointer;
+}
+input:focus {
+    outline: none;
+}
+
+/*LOGIN BUTTON*/
+
+button
+{
+    font-family: BPreplayBold;
+    border: 3.5px solid #f2a3bd;
+    color: #f2a3bd;
+    background-color: #ffffff;
+    border-radius: 10px;
+    width: auto;
+    padding: 10px 10px;
+    text-align: center;
+    margin-bottom: 10px;
+    transition: background-color .4s ease;
+}
+
+button:hover
+{
+    background-color: #ffc3d750;
+    cursor: pointer;
+}
+
+/*ERROR/SUCCESS MESSAGE*/
+
+.errorMessage {
+    font-family: BPreplayBold;
+    color: #f48091;
+}
+
+.successMessage {
+    font-family: BPreplayBold;
+    color: #a3cc98;
+}
+
+/*OPTION LINKS*/
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    width: 300px;
+}
+
+.link {
+    font-family: BPreplay;
+    font-size: .8em;
+    color: #d7aa84;
+    transition: opacity .4s ease;
+    text-decoration: underline;
+}
+
+.link:hover {
+    cursor: pointer;
+    opacity: .5;
+}
+
+/* STARS */
+
+.star {
+    position: fixed;
+}
+
+.star1 {
+    width: 25px;
+    top: 35vh;
+    right: 15vw;
+}
+
+.star2 {
+    width: 25px;
+    bottom: 41vh;
+    left: 14vw;
+}
+
+.star3 {
+    width: 20px;
+    right: 10vw;
+    top: 40vh;
+
+}
+
+.shoppingCart {
+    width: 15vw;
+    max-width: 120px;
+    position: absolute;
+    bottom: 2vh;
+    left: 5vw;
+}
+@media (max-height: 600px) {
+    .shoppingCart {
+        display: none;
+    }
+}
+
+/* ANIMATIONS */
+
+.rotate-center{-webkit-animation:rotate-center 12s linear infinite forwards;animation:rotate-center 12s linear infinite forwards}
+@-webkit-keyframes rotate-center{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes rotate-center{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}
+
+.rotate-center2{-webkit-animation:rotate-center2 8s linear infinite both;animation:rotate-center2 8s linear infinite both}
+@-webkit-keyframes rotate-center2{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes rotate-center2{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}
+
+.rotate-center-reverse{-webkit-animation:rotate-center-reverse 8s linear infinite reverse both;animation:rotate-center-reverse 8s linear infinite reverse both}
+@-webkit-keyframes rotate-center-reverse{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes rotate-center-reverse{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}
+
+.slide-right{-webkit-animation:slide-right 15s linear infinite alternate both;animation:slide-right 15s linear infinite alternate both}
+@-webkit-keyframes slide-right{0%{-webkit-transform:translateX(0);transform:translateX(0)}100%{-webkit-transform:translateX(50vw);transform:translateX(50vw)}}@keyframes slide-right{0%{-webkit-transform:translateX(0);transform:translateX(0)}100%{-webkit-transform:translateX(50vw);transform:translateX(50vw)}}
+

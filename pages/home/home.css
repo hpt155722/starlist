@@ -1,0 +1,18 @@
+body, html {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    font-family: BPreplayBold;
+    font-size: 30px;
+    text-align: center;
+}
+
+img {
+    width: 250px;
+    border: 10px solid grey;
+    border-radius: 10px;
+}
