@@ -1,20 +1,26 @@
 //When user clicks the login button
 function login() {
+    $('.loadingContainer').show();
     $('.errorMessage').hide();
 
     var userGivenUsername = $('.usernameBox').val();
     var userGivenPassword = $('.passwordBox').val();
 
     //Validate login
-
-    $.post('utilities/loginFunction.php', {username: userGivenUsername, password: userGivenPassword}, function(data) {
-        if (data.trim() === "Logged in successfully.") {
-            window.location.href = 'pages/home/home.php'
-        } else {
-            $('.errorMessage').text(data);
-            $('.errorMessage').show();
-        }
-    });
+    if (userGivenUsername == "" || userGivenPassword == "") {
+        $('.errorMessage').text("Credentials cannot be empty.");
+        $('.errorMessage').show();
+    } else {
+        $.post('utilities/loginFunction.php', {username: userGivenUsername, password: userGivenPassword}, function(data) {
+            if (data.trim() === "Logged in successfully.") {
+                window.location.href = 'pages/home/home.php'
+            } else {
+                $('.errorMessage').text(data);
+                $('.errorMessage').show();
+            }
+        });
+    }
+    $('.loadingContainer').hide();
 }
 
 function isValidEmail(email) {
@@ -25,22 +31,28 @@ function isValidEmail(email) {
 
 //When user clicks the signup button
 function signup() {
+    $('.loadingContainer').show();
     $('.errorMessage').hide();
 
     var userGivenEmail = $('.emailBox').val();
     var createdUsername = $('.createdUsernameBox').val();
     var createdPassword = $('.createdPasswordBox').val();
     var confirmPassword = $('.confirmPasswordBox').val();
+    alert(createdPassword); 
 
+    alert(createdPassword.length); 
     //Validate if input is not blank
     if (userGivenEmail == "" || createdUsername == "" || createdPassword == "" || confirmPassword == "" ) {
         $('.errorMessage').text('All credentials are required. Please try again.');
         $('.errorMessage').show();
-    } else if (!isValidEmail(userGivenEmail)) { //Validate if input is not blank
+    } else if (!isValidEmail(userGivenEmail)) { //Validate if email is in correct format
         $('.errorMessage').text('Not a valid email. Please try again.');
         $('.errorMessage').show();
     }  else if (createdPassword != confirmPassword) { //Validate if password is confirmed
         $('.errorMessage').text('Passwords do not match. Please try again.');
+        $('.errorMessage').show();
+    } else if (createdPassword.length < 8) { //Validate if password is long enough
+        $('.errorMessage').text('Password must be at least 8 characters. Please try again.');
         $('.errorMessage').show();
     } else {
         $.post('utilities/signupFunction.php', {email: userGivenEmail, username: createdUsername, password: createdPassword}, function(data) {
@@ -54,9 +66,9 @@ function signup() {
                 $('.errorMessage').text(data);
                 $('.errorMessage').show();
             }
-
         });
     }
+    $('.loadingContainer').hide();
 }
 
 //Hide error when user changes input
@@ -72,6 +84,7 @@ function switchToLogin() {
     $('.signupBox').addClass('fade-out');
     setTimeout(() => {
         $('.signupBox').hide();
+        $('.errorMessage').hide();
         $('.loginBox').show().addClass('fade-in');    
     }, 800);
     setTimeout(() => {
@@ -91,6 +104,7 @@ function switchToSignup() {
     $('.loginBox').addClass('fade-out');
     setTimeout(() => {
         $('.loginBox').hide();
+        $('.errorMessage').hide();
         $('.signupBox').show().addClass('fade-in');    
     }, 800);
     setTimeout(() => {

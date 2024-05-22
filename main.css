@@ -23,12 +23,18 @@ body, html {
     width: 100%;
     background-image: url("resources/images/landscapeBackground.png");
     background-size: cover;
+    color: #373a4f;
+    font-family: BPreplay;
 }
 
 @media screen and (orientation: portrait) {
     body, html {
         background-image: url("resources/images/portraitBackground.png");
     }
+}
+
+p {
+    color: #373a4f;
 }
 
 /* ANIMATIONS */

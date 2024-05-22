@@ -7,6 +7,25 @@ body, html {
     background-color: #ffffff;
 }
 
+/*LOADING SCREEN*/
+.loadingContainer {
+    height: 100%;
+    width: 100%;
+    background-color: #fff2deb0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.loadingLogo {
+    width: 20vw;
+    max-width: 140px;
+}
+
 /*LOGIN/SIGNUP BOX*/
 
 .contentBox {
@@ -29,10 +48,20 @@ body, html {
 
 /*LOGO*/
 
-.logo
-{
-    width: 250px;
+.logo {
     margin-bottom: 30px;
+    max-width: 300px;
+}
+@media (orientation: portrait)  {
+    .logo {
+        width: 55vw;
+    }
+}
+@media (orientation: landscape)  {
+    .logo {
+        width: 27vw;
+        
+    }
 }
 
 /*INPUT BOXES*/
@@ -42,11 +71,17 @@ input {
     border: 3.5px solid #bac1db;
     border-radius: 10px;
     color: #8b96bd;
-    width: 280px;
+    width: 30vw;
+    max-width: 280px;
     padding: 10px 10px;
     text-align: center;
     transition: opacity .4s ease;
     margin-bottom: 15px;
+}
+@media (orientation: portrait) {
+    input {
+        width: 55vw;
+    }
 }
 
 input:hover::placeholder{
@@ -69,8 +104,7 @@ input:focus {
 
 /*LOGIN BUTTON*/
 
-button
-{
+button {
     font-family: BPreplayBold;
     border: 3.5px solid #f2a3bd;
     color: #f2a3bd;
@@ -83,8 +117,7 @@ button
     transition: background-color .4s ease;
 }
 
-button:hover
-{
+button:hover {
     background-color: #ffc3d750;
     cursor: pointer;
 }
@@ -125,39 +158,32 @@ button:hover
 /* STARS */
 
 .star {
-    position: fixed;
+    position: absolute;
+    width: 5vw;
+}
+@media (max-width: 330px) {
+    .star {
+        display: none;
+    }
 }
 
 .star1 {
-    width: 25px;
-    top: 35vh;
-    right: 15vw;
+    max-width: 28px;
+    top: 28vh;
+    right: 12vw;
 }
 
 .star2 {
-    width: 25px;
-    bottom: 41vh;
-    left: 14vw;
+    max-width: 26px;
+    bottom: 42vh;
+    left: 8vw;
 }
 
 .star3 {
-    width: 20px;
-    right: 10vw;
-    top: 40vh;
+    max-width: 23px;
+    right: 8vw;
+    top: 33vh;
 
-}
-
-.shoppingCart {
-    width: 15vw;
-    max-width: 120px;
-    position: absolute;
-    bottom: 2vh;
-    left: 5vw;
-}
-@media (max-height: 600px) {
-    .shoppingCart {
-        display: none;
-    }
 }
 
 /* ANIMATIONS */
@@ -170,7 +196,3 @@ button:hover
 
 .rotate-center-reverse{-webkit-animation:rotate-center-reverse 8s linear infinite reverse both;animation:rotate-center-reverse 8s linear infinite reverse both}
 @-webkit-keyframes rotate-center-reverse{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes rotate-center-reverse{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}
-
-.slide-right{-webkit-animation:slide-right 15s linear infinite alternate both;animation:slide-right 15s linear infinite alternate both}
-@-webkit-keyframes slide-right{0%{-webkit-transform:translateX(0);transform:translateX(0)}100%{-webkit-transform:translateX(50vw);transform:translateX(50vw)}}@keyframes slide-right{0%{-webkit-transform:translateX(0);transform:translateX(0)}100%{-webkit-transform:translateX(50vw);transform:translateX(50vw)}}
-

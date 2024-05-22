@@ -1,6 +1,6 @@
 # starlist 
 
-Starlist is a shopping list app that includes comparisons of unit prices at different stores.
+Starlist is an app designed to help shoppers create a shopping list while also providing comparisons of unit prices across various stores. Its primary goal is to determine which store offers the lowest unit price for each item.
 
 -------- PROJECT CURRENTLY IN PROGRESS -------- 
 
@@ -25,12 +25,12 @@ Starlist is a shopping list app that includes comparisons of unit prices at diff
 ☆ Automatically show cheapest store to buy from<br>
 ☆ Password encryption<br>
  <br>
- 
+  
+<!--
 ### ☆ ───── Screenshots ───── ☆
 
  <br>
 
- <!--
 
  <div>
     <img style = "width: 20vh; margin: 5vh;" src = "src/thumbnails/startScreen.png">

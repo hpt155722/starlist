@@ -18,6 +18,7 @@
             $statement = $conn -> prepare("SELECT * FROM users WHERE email = ?");
             $statement -> bind_param("s", $email);
 
+            
             //Execute and get results
             $statement -> execute();
             $result = $statement->get_result();

@@ -1,9 +1,54 @@
 body, html {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    width: 100%;
+    padding: 0;
 }
+
+button {
+    transition: opacity 0.2s ease; 
+    border: 3.5px solid #f2a3bd;
+    color: #f2a3bd;
+    background-color: #ffffff;
+    border-radius: 10px;
+    font-family: BPreplayBold;
+    padding: 8px;
+    width: 70%;
+    border-radius: 20px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    button:hover {
+        opacity: .4;
+        cursor: pointer;
+    }
+
+    .menuIcon:hover {
+        opacity: .4;
+        cursor: pointer;
+    }
+    
+    .addNewItemButton:hover
+    {
+        opacity: .4;
+        cursor: pointer;
+    }
+    .exitIcon:hover {
+        opacity: .4;
+        cursor: pointer;
+    }
+    .checkbox:hover {
+        opacity: .4;
+        cursor: pointer;
+    }
+    .editIcon:hover {
+        opacity: .4;
+        cursor: pointer;
+    }
+}
+
+
 
 p {
     font-family: BPreplayBold;
@@ -11,8 +56,297 @@ p {
     text-align: center;
 }
 
-img {
-    width: 250px;
-    border: 10px solid grey;
+.header {
+    display: flex;
+    align-items: center;     
+    justify-content: center;
+    align-content: center;
+    width: 100vw;
+    background-color: #fde9aede;
+}
+
+.menuIcon {
+    width: 7vw;
+    max-width: 30px;
+    position: absolute;
+    left: 5vw;
+    transition: opacity .4s ease;
+}
+
+.shoppingListTitle {
+    width: 50%;
+    max-width: 300px;
+    padding: 20px 0;
+}
+
+.contentBody {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.addNewItemButton {
+    font-family: BPreplayBold;
+    border: 4px solid #8b96bd;
+    color: #8b96bd;
+    background-color: #ffffff;
     border-radius: 10px;
+    padding: 10px 5px;
+    margin: 20px 0;
+    width: 80vw;
+    max-width: 500px;
+    text-align: center;
+    letter-spacing: 2px;
+    transition: opacity .4s ease;
+}
+
+/* ADD EDIT POP UP */
+
+.addEditItem {
+    background-color: #585a6cb9;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    display: flex;
+    align-items: end;
+    justify-content: center;
+
+    transition: opacity .4s ease;
+}
+
+.addEditWindow {
+    background-color: #ffffff;
+    border: 10px solid #f6e09e;
+    border-radius: 15px;
+    width: 85vw;
+    padding-bottom: 20px;
+    position: absolute;
+    top: 5vh;
+    display: flex;
+    flex-direction:column;
+}
+
+.addEditWindowHeader {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 7px;
+    background-color: #f6e09e;
+}
+
+.addEditWindowTitle {
+    font-size: 1.1em;
+}
+
+.exitIcon {
+    width: 30px;
+    position: absolute;
+    right: 10px;
+}
+
+.addEditWindowBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.label {
+    font-size: .8em;
+    letter-spacing: 1px;
+    color: #585a6c;
+    margin-bottom: 3px;
+    margin-top: 30px;
+}
+
+.addEditItemName {
+    border: 5px solid #585a6c;
+    border-radius: 15vw;
+    width: 80%;
+    padding: 10px 0;
+    text-align: center;
+    font-family: BPreplayBold;
+    font-size: 1em;
+    color: #585a6c;
+    margin-bottom: 10px;
+}
+
+.unitContainer, .categoryContainer {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+}
+
+.unitTypes, .weightUnits, .liquidUnits, .categoryTypes {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.pricesLabel {
+    background-color: #f6e09e;
+    font-size: 1em;
+    color: #393a43;
+    padding: 5px 40px;
+
+    border-radius: 15vw;
+    margin-top: 20px;
+}
+
+.cheapestStore {
+    font-size: 1em;
+    text-align: center;
+    width: 100%;
+}
+
+.priceContainer {   
+    display: flex;
+    width: 85%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px 10px 10px 10px;
+
+    font-size: 1em;
+    border: 4px solid #585a6c;
+    border-radius: 20px;
+    margin: 10px 0;
+}
+
+input, select {
+    border: 3px solid #585a6c;
+    border-radius: 3vw;
+    text-align: center;
+    font-family: BPreplay;
+    font-size: .8em;
+    padding: 8px 5px;
+    color: #585a6c;
+    margin: 5px 0px;
+    font-family: BPreplayBold;
+}
+
+select {
+    flex: 1;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+select-container select {
+    padding: 15px;
+}
+
+.priceLabel {
+    font-size: .8em;
+}
+
+label {
+    font-size: .8em;
+    text-align: right;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 10px;
+    font-family: BPreplayBold;
+}
+
+.pricesCalcualtionContainer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.netWeight {
+    width: 42%;
+}
+
+.totalPrice {
+    width: 42%;
+}
+
+.unitPrice {
+    font-size: .9em;
+    text-align: center;
+    margin: 10px 0;
+    font-family: BPreplayBold;
+    width: 100%;
+}
+
+.storeName {
+    width: 100%;
+}
+
+.saveAddItemButton {
+    font-family: BPreplayBold;
+    font-size: 1em;
+    border: 0;
+    background-color: #c4cef1;
+    color:#393a43;
+    border-radius: 10px;
+    width: auto;
+    padding: 10px 20px;
+    text-align: center;
+    margin: 20px 0 5px 0;
+}
+
+.addPrice {
+    margin: 10px 0;   
+    color:#313136
+}
+
+.errorMessage {
+    font-family: BPreplayBold;
+    font-size: 1.5em;
+    color:#ea7b7b;
+}
+
+.shoppingListBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.categoryLabel {
+    background-color: #ffffff;
+    border: 4px solid #f2a3bd;
+    color: #313136;
+    font-size: .9em;
+    width:max-content;
+    padding: 5px 80px;
+    border-radius: 20px;
+}
+
+.item {
+    display: flex;
+    width: 75vw;
+    align-items: center;
+}
+
+.checkbox {
+    width: 30px;
+    height: 30px;
+    transition: opacity .4s ease;
+    margin-right: 15px;
+}
+
+.itemName {
+    font-size: 1em;
+}
+
+.editIcon {
+    width: 20px;
+    position: absolute;
+    right: 40px;
+    transition: opacity .4s ease;
+}
+
+.checked {
+    opacity: .4;
 }
