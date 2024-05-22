@@ -1,6 +1,5 @@
 <?php
-    include 'utilities/connection.php';
-?>
+include 'utilities/connection.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">

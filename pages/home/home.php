@@ -1,9 +1,9 @@
 <?php
-    session_start();
+session_start();
 
-    if (empty($_SESSION['loggedInUser'])) {
-        echo "<script> window.location.href = '../../login.php'</script>";
-    }
+if (empty($_SESSION['loggedInUser'])) {
+    echo "<script> window.location.href = '../../login.php'</script>";
+}
 ?>
 
 <!DOCTYPE html>
@@ -73,7 +73,7 @@
                     <div class = 'unitContainer'>
                         <div class="unitTypes">
                             <label for="unitType"> Unit Type:</label>
-                            <select class="unitType" onchange = 'changeUnits(); calculateUnitWeight(); updateUnitTypeAndUnit();'>
+                            <select class="unitType" onchange = 'changeUnits(); calculateUnitPrice(); updateUnitTypeAndUnit();'>
                                 <option value="weight" selected>Weight</option>
                                 <option value="liquid">Liquid</option>
                             </select>
@@ -81,7 +81,7 @@
 
                         <div class="weightUnits">
                             <label for="weightUnit"> Weight Unit: </label>
-                            <select class="weightUnit" onchange='calculateUnitWeight(); updateUnitTypeAndUnit();'>
+                            <select class="weightUnit" onchange='calculateUnitPrice(); updateUnitTypeAndUnit();'>
                                 <option value="gram" selected>Gram (g)</option>
                                 <option value="kilogram">Kilogram (kg)</option>
                                 <option value="ounce">Ounce (oz)</option>
@@ -91,7 +91,7 @@
 
                         <div class="liquidUnits" style="display: none;">
                             <label for="liquidUnit"> Liquid Unit: </label>
-                            <select class="liquidUnit" onchange='calculateUnitWeight(); updateUnitTypeAndUnit();'>
+                            <select class="liquidUnit" onchange='calculateUnitPrice(); updateUnitTypeAndUnit();'>
                                 <option value="milliliter" selected>Milliliter (ml)</option>
                                 <option value="liter">Liter (l)</option>
                                 <option value="fluidOunce">Fluid Ounce (fl oz)</option>
@@ -139,6 +139,7 @@
                     <button class = 'addPrice' onclick = 'addPrice()'> add price+ </button>
 
                     <button class = 'saveAddItemButton' onclick = 'addSaveItemConfirm()'> save item </button>
+                    <img class = 'trashCan' onclick = 'deleteItem();' src = '../../resources/images/trashCan.png'>
                 </div>
             </div>
         </div>

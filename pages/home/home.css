@@ -1,13 +1,15 @@
-body, html {
+body,
+html {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     padding: 0;
+    background-color: #fde9aede;
 }
 
 button {
-    transition: opacity 0.2s ease; 
+    transition: opacity 0.2s ease;
     border: 3.5px solid #f2a3bd;
     color: #f2a3bd;
     background-color: #ffffff;
@@ -19,36 +21,17 @@ button {
 }
 
 @media (hover: hover) and (pointer: fine) {
-    button:hover {
-        opacity: .4;
-        cursor: pointer;
-    }
-
-    .menuIcon:hover {
-        opacity: .4;
-        cursor: pointer;
-    }
-    
-    .addNewItemButton:hover
-    {
-        opacity: .4;
-        cursor: pointer;
-    }
-    .exitIcon:hover {
-        opacity: .4;
-        cursor: pointer;
-    }
-    .checkbox:hover {
-        opacity: .4;
-        cursor: pointer;
-    }
-    .editIcon:hover {
-        opacity: .4;
+    button:hover,
+    .menuIcon:hover,
+    .addNewItemButton:hover,
+    .exitIcon:hover,
+    .checkbox:hover,
+    .editIcon:hover,
+    .trashCan:hover {
+        opacity: 0.4;
         cursor: pointer;
     }
 }
-
-
 
 p {
     font-family: BPreplayBold;
@@ -58,7 +41,7 @@ p {
 
 .header {
     display: flex;
-    align-items: center;     
+    align-items: center;
     justify-content: center;
     align-content: center;
     width: 100vw;
@@ -70,7 +53,7 @@ p {
     max-width: 30px;
     position: absolute;
     left: 5vw;
-    transition: opacity .4s ease;
+    transition: opacity 0.4s ease;
 }
 
 .shoppingListTitle {
@@ -85,12 +68,11 @@ p {
     width: 100%;
     justify-content: center;
     align-items: center;
-
 }
 
 .addNewItemButton {
     font-family: BPreplayBold;
-    font-size: .9em;
+    font-size: 0.9em;
     border: 4px solid #8b96bd;
     color: #8b96bd;
     background-color: #ffffff;
@@ -101,13 +83,13 @@ p {
     max-width: 500px;
     text-align: center;
     letter-spacing: 2px;
-    transition: opacity .4s ease;
+    transition: opacity 0.4s ease;
 }
 
 /* ADD EDIT POP UP */
 
 .popUpEntireContainer {
-    transition: opacity .4s ease;
+    transition: opacity 0.4s ease;
     width: 100%;
     height: max-content;
     top: 0;
@@ -135,7 +117,7 @@ p {
     align-items: end;
     justify-content: center;
 
-    transition: opacity .4s ease;
+    transition: opacity 0.4s ease;
 }
 
 .addEditWindow {
@@ -146,9 +128,12 @@ p {
     padding-bottom: 20px;
     top: 5vh;
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
 
     margin-top: 10vh;
+    margin-bottom: 30px;
+
+    position: relative;
 }
 
 .addEditWindowHeader {
@@ -160,7 +145,7 @@ p {
     padding-bottom: 7px;
     background-color: #f6e09e;
 
-    position: relative; 
+    position: relative;
 }
 
 .addEditWindowTitle {
@@ -181,7 +166,7 @@ p {
 }
 
 .label {
-    font-size: .8em;
+    font-size: 0.8em;
     letter-spacing: 1px;
     color: #585a6c;
     margin-bottom: 3px;
@@ -200,13 +185,17 @@ p {
     margin-bottom: 10px;
 }
 
-.unitContainer, .categoryContainer {
+.unitContainer,
+.categoryContainer {
     display: flex;
     flex-direction: column;
     width: 85%;
 }
 
-.unitTypes, .weightUnits, .liquidUnits, .categoryTypes {
+.unitTypes,
+.weightUnits,
+.liquidUnits,
+.categoryTypes {
     width: 100%;
     display: flex;
     align-items: center;
@@ -228,7 +217,7 @@ p {
     width: 100%;
 }
 
-.priceContainer {   
+.priceContainer {
     display: flex;
     width: 85%;
     justify-content: space-between;
@@ -241,12 +230,13 @@ p {
     margin: 10px 0;
 }
 
-input, select {
+input,
+select {
     border: 3px solid #585a6c;
     border-radius: 3vw;
     text-align: center;
     font-family: BPreplay;
-    font-size: .8em;
+    font-size: 0.8em;
     padding: 8px 5px;
     color: #585a6c;
     margin: 5px 0px;
@@ -264,11 +254,11 @@ select-container select {
 }
 
 .priceLabel {
-    font-size: .8em;
+    font-size: 0.8em;
 }
 
 label {
-    font-size: .8em;
+    font-size: 0.8em;
     text-align: right;
     margin-top: auto;
     margin-bottom: auto;
@@ -291,7 +281,7 @@ label {
 }
 
 .unitPrice {
-    font-size: .9em;
+    font-size: 0.9em;
     text-align: center;
     margin: 10px 0;
     font-family: BPreplayBold;
@@ -307,7 +297,7 @@ label {
     font-size: 1em;
     border: 0;
     background-color: #c4cef1;
-    color:#393a43;
+    color: #393a43;
     border-radius: 10px;
     width: auto;
     padding: 10px 20px;
@@ -316,14 +306,14 @@ label {
 }
 
 .addPrice {
-    margin: 10px 0;   
-    color:#313136
+    margin: 10px 0;
+    color: #313136;
 }
 
 .errorMessage {
     font-family: BPreplayBold;
     font-size: 1.5em;
-    color:#ea7b7b;
+    color: #ea7b7b;
 }
 
 .shoppingListBody {
@@ -337,10 +327,10 @@ label {
     background-color: #ffffff;
     border: 4px solid #f2a3bd;
     color: #4c4c51;
-    font-size: .8em;
-    letter-spacing: .1em;
-    width:max-content;
-    padding: 5px 80px;
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+    width: max-content;
+    padding: 5px 40px;
     border-radius: 20px;
 }
 
@@ -353,7 +343,7 @@ label {
 .checkbox {
     width: 30px;
     height: 30px;
-    transition: opacity .4s ease;
+    transition: opacity 0.4s ease;
     margin-right: 15px;
 }
 
@@ -365,13 +355,12 @@ label {
     width: 20px;
     position: absolute;
     right: 40px;
-    transition: opacity .4s ease;
+    transition: opacity 0.4s ease;
 }
 
 .checked {
-    opacity: .4;    
+    opacity: 0.35;
     z-index: 5;
-
 }
 
 .cheapestStore {
@@ -381,6 +370,13 @@ label {
     margin-left: auto;
     margin-right: auto;
     border-radius: 20px;
-    font-size: .9em;
-    letter-spacing: .2em;
-}   
+    font-size: 0.9em;
+    letter-spacing: 0.2em;
+}
+
+.trashCan {
+    width: 25px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
