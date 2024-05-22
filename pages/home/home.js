@@ -1,25 +1,20 @@
 var currentTypeOpened;
 var currentUnitType; 
 var currentUnit; 
-function addEditItemOpen(type) {
-    currentTypeOpened = type;
-    if (type == 'addNewItem') { //If pop up is add new item
-        $('.addEditWindowTitle').val("add new item");
-        $('.saveAddItemButton').html("create item");
+function addItemOpen() {
+    currentTypeOpened = "addNewItem";
+    $('.addEditWindowTitle').text("add new item");
+    $('.saveAddItemButton').html("create item");
 
-        $('.price1').hide();
-        $('.price2').hide();
-        $('.price3').hide();
-        $('.addPrice').show();
+    $('.price1').hide();
+    $('.price2').hide();
+    $('.price3').hide();
+    $('.addPrice').show();
 
-        currentUnitType = "weight";
-        currentUnit = "gram";
-    } else {
-        $('.addEditWindowTitle').val("edit item");
-        $('.saveAddItemButton').html("save item");
-    }
-    $('.addEditItem').css('opacity', 0);
-    $('.addEditItem').show().css('opacity', 100);
+    currentUnitType = "weight";
+    currentUnit = "gram";
+    $('.popUpEntireContainer').css('opacity', 0);
+    $('.popUpEntireContainer').show().css('opacity', 100);
     validateAddEditConfirmButton();
 }
 
@@ -33,10 +28,10 @@ function updateUnitTypeAndUnit() {
 }
 
 function addEditItemClose() {
-    $('.addEditItem').css('opacity', 0);
+    $('.popUpEntireContainer').css('opacity', 0);
     setTimeout(() => {
         $('.addEditItemName').val("");
-        $('.addEditItem').hide();
+        $('.popUpEntireContainer').hide();
     }, 400);
 }
 
@@ -189,6 +184,7 @@ function addSaveItemConfirm() {
             itemName: $('.addEditItemName').val(),
             category: $('.categoryType').val(),
             weightUnit: currentUnit,
+            unitType: currentUnitType,
             storeName1: $('.price1 .storeName').val() || null,
             netWeight1: $('.price1 .netWeight').val() || null,
             totalPrice1: $('.price1 .totalPrice').val() || null,
@@ -244,4 +240,126 @@ function toggleCheckedAttribute(element) {
     $.post("../../utilities/updateChecked.php", { itemID: itemID, newChecked: newChecked }, function(response) {
         populateShoppingBody();
     });
+}
+
+//Edit items
+// Loop through each editIcon
+function editItemOpen(selectedItem) {
+    // Get data attributes
+    var itemID = $(selectedItem).attr('itemID');
+    var itemName = $(selectedItem).attr('itemName');
+    var category = $(selectedItem).attr('category');
+    var unit = $(selectedItem).attr('unit');
+    var unitType = $(selectedItem).attr('unitType');
+    var storeName1 = $(selectedItem).attr('storeName1');
+    var netWeight1 = $(selectedItem).attr('netWeight1');
+    var totalPrice1 = $(selectedItem).attr('totalPrice1');
+    var storeName2 = $(selectedItem).attr('storeName2');
+    var netWeight2 = $(selectedItem).attr('netWeight2');
+    var totalPrice2 = $(selectedItem).attr('totalPrice2');
+    var storeName3 = $(selectedItem).attr('storeName3');
+    var netWeight3 = $(selectedItem).attr('netWeight3');
+    var totalPrice3 = $(selectedItem).attr('totalPrice3');
+    console.log(`
+        itemID: ${itemID},
+        itemName: ${itemName},
+        category: ${category},
+        unit: ${unit},
+        unitType: ${unitType},
+        storeName1: ${storeName1},
+        netWeight1: ${netWeight1},
+        totalPrice1: ${totalPrice1},
+        storeName2: ${storeName2},
+        netWeight2: ${netWeight2},
+        totalPrice2: ${totalPrice2},
+        storeName3: ${storeName3},
+        netWeight3: ${netWeight3},
+        totalPrice3: ${totalPrice3}
+        `);
+
+    //Edit pop up
+    currentTypeOpened = "editItem";
+    $('.addEditWindowTitle').text("edit item");
+    $('.saveAddItemButton').html("save item");
+
+    $('.addEditItemName').val(itemName);
+    $('.categoryType').val(category);
+    $('.unitType').val(unitType);
+    if (unitType == 'weight') {
+        $('.weightUnit').val(unit);
+        $('.weightUnits').show();
+        $('.liquidUnits').hide();
+    } else {
+        $('.liquidUnit').val(unit);
+        $('.weightUnits').hide();
+        $('.liquidUnits').show();
+    }
+
+    if (storeName1 != "") {
+        $('.price1 .storeName').val(storeName1);
+        $('.price1 .netWeight').val(netWeight1);
+        $('.price1 .totalPrice').val(totalPrice1);
+        calculateUnitWeight("price1");
+        $('.price1').show();
+    } else {
+        $('.price1').hide();
+    }
+    if (storeName2 != "") {
+        $('.price2 .storeName').val(storeName2);
+        $('.price2 .netWeight').val(netWeight2);
+        $('.price2 .totalPrice').val(totalPrice2);
+        calculateUnitWeight("price2");
+        $('.price2').show();
+    } else {
+        $('.price2').hide();
+    }
+    if (storeName3 != "") {
+        $('.price3 .storeName').val(storeName3);
+        $('.price3 .netWeight').val(netWeight3);
+        $('.price3 .totalPrice').val(totalPrice3);
+        calculateUnitWeight("price3");
+        $('.price3').show();
+    } else {
+        $('.price3').hide();
+    }
+    calculateCheapestStore()
+
+
+    $('.popUpEntireContainer').css('opacity', 0);
+    $('.popUpEntireContainer').show().css('opacity', 100);
+}
+
+function calculateCheapestStore() {
+    var cheapestPrice = Infinity;
+    var cheapestPriceName = '';
+
+    // Check if price1 is visible
+    if ($('.price1').is(':visible')) {
+        var price1UnitPrice = parseFloat($('.price1 .unitPrice').text());
+        if (price1UnitPrice < cheapestPrice) {
+            cheapestPrice = price1UnitPrice;
+            cheapestPriceName = 'price1';
+        }
+    }
+
+    // Check if price2 is visible
+    if ($('.price2').is(':visible')) {
+        var price2UnitPrice = parseFloat($('.price2 .unitPrice').text());
+        if (price2UnitPrice < cheapestPrice) {
+            cheapestPrice = price2UnitPrice;
+            cheapestPriceName = 'price2';
+        }
+    }
+
+    // Check if price3 is visible
+    if ($('.price3').is(':visible')) {
+        var price3UnitPrice = parseFloat($('.price3 .unitPrice').text());
+        if (price3UnitPrice < cheapestPrice) {
+            cheapestPrice = price3UnitPrice;
+            cheapestPriceName = 'price3';
+        }
+    }
+
+    // Display the cheapest store
+    $(cheapestPriceName + '.cheapestStore').show();
 }

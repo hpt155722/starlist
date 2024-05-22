@@ -10,6 +10,7 @@
         $itemName = htmlspecialchars($_POST['itemName']);
         $category = htmlspecialchars($_POST['category']);
         $weightUnit = htmlspecialchars($_POST['weightUnit']);
+        $unitType = htmlspecialchars($_POST['unitType']);
 
         // Array to store prices
         $prices = array();
@@ -35,11 +36,11 @@
         }
 
         try {
-            $statement = $conn->prepare("INSERT INTO items (userID, itemName, category, unit, storeName1, newWeight1, totalPrice1, storeName2, newWeight2, totalPrice2, storeName3, newWeight3, totalPrice3) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            $statement = $conn->prepare("INSERT INTO items (userID, itemName, category, unit, storeName1, netWeight1, totalPrice1, storeName2, netWeight2, totalPrice2, storeName3, netWeight3, totalPrice3, unitType) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?,?)");
             $userID = $_SESSION['loggedInUser'];
 
             // Bind parameters
-            $statement->bind_param('issdsddsddsdd', $userID, $itemName, $category, $weightUnit, $storeName1, $netWeight1, $totalPrice1, $storeName2, $netWeight2, $totalPrice2, $storeName3, $netWeight3, $totalPrice3);
+            $statement->bind_param('issssddsddsdds', $userID, $itemName, $category, $weightUnit, $storeName1, $netWeight1, $totalPrice1, $storeName2, $netWeight2, $totalPrice2, $storeName3, $netWeight3, $totalPrice3, $unitType);
         
             // Set parameters
             $itemName = htmlspecialchars($_POST['itemName']);

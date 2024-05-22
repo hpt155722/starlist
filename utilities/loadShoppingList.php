@@ -26,7 +26,7 @@
         // Loop through each category and its items
         foreach ($itemsByCateogory as $category => $items) {
             // Print category heading
-            echo "<p class='categoryLabel'>$category</p>";
+            echo "<p class='categoryLabel' style='text-transform: uppercase;'>$category</p>";
     
             // Print items
             foreach ($items as $item) {
@@ -37,9 +37,25 @@
                     echo "<div class='item checked' itemID='" . $item['itemID'] . "' dataChecked='" . $item['checked'] . "'>";
                         echo "<img class='checkbox' src='../../resources/images/checkedBox.png' onclick='toggleCheckedAttribute(this)'>";
                 }
-                    echo "<p class = 'itemName'>" . $item["itemName"] . "</p>";
-                    echo "<img class='editIcon' itemID='" . $item['itemID'] . "' src='../../resources/images/editIcon.png'>";
+                echo "<p class = 'itemName'>" . $item["itemName"] . "</p>";
+                echo "<img class='editIcon' onclick = 'editItemOpen(this);' 
+                    itemID='" . ($item['itemID'] ?? 'null') . "' 
+                    itemName='" . ($item['itemName'] ?? 'null') . "' 
+                    category='" . ($item['category'] ?? 'null') . "' 
+                    unit='" . ($item['unit'] ?? 'null') . "' 
+                    unitType='" . ($item['unitType'] ?? 'null') . "' 
+                    storeName1='" . ($item['storeName1'] ?? 'null') . "' 
+                    netWeight1='" . ($item['netWeight1'] ?? 'null') . "' 
+                    totalPrice1='" . ($item['totalPrice1'] ?? 'null') . "' 
+                    storeName2='" . ($item['storeName2'] ?? 'null') . "' 
+                    netWeight2='" . ($item['netWeight2'] ?? 'null') . "' 
+                    totalPrice2='" . ($item['totalPrice2'] ?? 'null') . "' 
+                    storeName3='" . ($item['storeName3'] ?? 'null') . "' 
+                    netWeight3='" . ($item['netWeight3'] ?? 'null') . "' 
+                    totalPrice3='" . ($item['totalPrice3'] ?? 'null') . "' 
+                    src='../../resources/images/editIcon.png'>";
                 echo "</div>";
+
             }
         }
     } else {
