@@ -5,6 +5,7 @@ html {
     align-items: center;
     width: 100%;
     padding: 0;
+    margin: 0;
     background-color: #fde9aede;
 }
 
@@ -45,7 +46,8 @@ p {
     justify-content: center;
     align-content: center;
     width: 100vw;
-    background-color: #fde9aede;
+    background-color: rgba(255, 242, 202, 0.9);
+    border-bottom: 0px solid #f2a3bd;
 }
 
 .menuIcon {
@@ -59,7 +61,7 @@ p {
 .shoppingListTitle {
     width: 50%;
     max-width: 300px;
-    padding: 20px 0;
+    padding: 12px 0;
 }
 
 .contentBody {
@@ -72,8 +74,8 @@ p {
 
 .addNewItemButton {
     font-family: BPreplayBold;
-    font-size: 0.9em;
-    border: 4px solid #8b96bd;
+    font-size: 0.8em;
+    border: 3px solid #8b96bd;
     color: #8b96bd;
     background-color: #ffffff;
     border-radius: 15px;
@@ -336,7 +338,7 @@ label {
 
 .item {
     display: flex;
-    width: 75vw;
+    width: 80vw;
     align-items: center;
 }
 
@@ -349,6 +351,7 @@ label {
 
 .itemName {
     font-size: 1em;
+    color: #4b4750;
 }
 
 .editIcon {

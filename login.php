@@ -20,7 +20,7 @@ include 'utilities/connection.php'; ?>
     <script src="login.js"></script>
 
 </head>
-<body>
+<body onload = 'onload();'>
     <!-- LOADING SCREEN -->
     <div class = 'loadingContainer' style = 'display: none'>
         <img class = 'loadingLogo' src = 'resources/images/loadingStar.gif'>

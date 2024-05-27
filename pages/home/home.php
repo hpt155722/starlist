@@ -43,7 +43,7 @@ if (empty($_SESSION['loggedInUser'])) {
                 <div class = 'addEditWindowBody'>
                     <!-- Item title  -->
                     <p class = 'label'> NAME OF ITEM </p>
-                    <input class = 'addEditItemName' oninput = 'validateAddEditConfirmButton()' type = 'text' maxlength="25">
+                    <input class = 'addEditItemName' oninput = 'validateAddEditConfirmButton()' type = 'text' maxlength="25" placeholder="Peaches">
 
                     <!-- Item category  -->
                     <div class = 'categoryContainer'>

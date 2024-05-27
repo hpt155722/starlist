@@ -1,3 +1,7 @@
+function onload() {
+    $('.usernameBox').val('');
+    $('.passwordBox').val('');
+}
 //When user clicks the login button
 function login() {
     $(".loadingContainer").show();
@@ -94,10 +98,8 @@ function switchToLogin() {
         $(".signupBox").removeClass("fade-out");
         $(".loginBox").removeClass("fade-in");
 
-        $(".emailBox").val("");
-        $(".createdUsernameBox").val("");
-        $(".createdPasswordBox").val("");
-        $(".confirmPasswordBox").val("");
+        $(".usernameBox").val("");
+        $(".passwordBox").val("");
     }, 1600);
 }
 
@@ -113,7 +115,10 @@ function switchToSignup() {
         $(".loginBox").removeClass("fade-out");
         $(".signupBox").removeClass("fade-in");
 
-        $(".usernameBox").val("");
-        $(".passwordBox").val("");
+        $(".emailBox").val("");
+        $(".createdUsernameBox").val("");
+        $(".createdPasswordBox").val("");
+        $(".confirmPasswordBox").val("");
+        
     }, 1600);
 }
