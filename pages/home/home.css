@@ -383,3 +383,37 @@ label {
     bottom: 10px;
     left: 10px;
 }
+
+.settingsTab {
+    background-color: #ffefbe;
+    position: fixed;
+    left:0;
+    height: 100vh;
+    width: 50vw;
+    max-width: 200px;
+    z-index: 20;
+    padding-top: 2vh;
+
+    display: flex;
+    flex-direction: column;
+}   
+
+.logoutButton {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1vh;
+    height: max-content
+
+}
+
+.fade-out{-webkit-animation:fade-out .4s ease-out both;animation:fade-out .4s ease-out both}
+@-webkit-keyframes fade-out{0%{opacity:1}100%{opacity:0}}@keyframes fade-out{0%{opacity:1}100%{opacity:0}}
+
+.fade-in{-webkit-animation:fade-in .4s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-in .4s cubic-bezier(.39,.575,.565,1.000) both}
+@-webkit-keyframes fade-in{0%{opacity:0}100%{opacity:1}}@keyframes fade-in{0%{opacity:0}100%{opacity:1}}
+
+.slide-in-left{-webkit-animation:slide-in-left .4s cubic-bezier(.25,.46,.45,.94) both;animation:slide-in-left .4s cubic-bezier(.25,.46,.45,.94) both}
+@-webkit-keyframes slide-in-left{0%{-webkit-transform:translateX(-1000px);transform:translateX(-1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}@keyframes slide-in-left{0%{-webkit-transform:translateX(-1000px);transform:translateX(-1000px);opacity:0}100%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}}
+
+.slide-out-left{-webkit-animation:slide-out-left .4s cubic-bezier(.55,.085,.68,.53) both;animation:slide-out-left .4s cubic-bezier(.55,.085,.68,.53) both}
+@-webkit-keyframes slide-out-left{0%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}100%{-webkit-transform:translateX(-1000px);transform:translateX(-1000px);opacity:0}}@keyframes slide-out-left{0%{-webkit-transform:translateX(0);transform:translateX(0);opacity:1}100%{-webkit-transform:translateX(-1000px);transform:translateX(-1000px);opacity:0}}

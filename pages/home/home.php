@@ -25,9 +25,16 @@ if (empty($_SESSION['loggedInUser'])) {
 </head>
 <body>
     <div class = 'header'>
-        <img class = 'menuIcon' src = '../../resources/images/menuIcon.png'>
+        <img class = 'menuIcon' onclick = 'openSettings()' src = '../../resources/images/menuIcon.png'>
         <img class = 'shoppingListTitle' src = '../../resources/images/shoppingListTitle.png'>
     </div>
+
+    <!--Logout-->
+    <div class = 'settingsTab' style = 'display: none' >
+        <p style = 'text-align: center; font-size: 1em'> settings </p>
+        <button class = 'logoutButton' onclick = 'logout()'> log out </button>
+    </div>
+    <div style = 'display: none' class = 'backgroundBlur settingsBlur' onclick = 'closeSettings()'></div>
 
     <!-- Add/Edit item popup  -->
     <div class = 'popUpEntireContainer'style = 'display: none' >
@@ -35,7 +42,7 @@ if (empty($_SESSION['loggedInUser'])) {
         <div class = 'addEditItem' >
             <div class = 'addEditWindow'>
                 <!-- Header  -->
-                <div class = 'addEditWindowHeader'>
+                <div class = 'addEditWindowHe ader'>
                     <p class = 'addEditWindowTitle'> add new item </p>
                     <img class = 'exitIcon' onclick = 'addEditItemClose()' src = '../../resources/images/exitIcon.png'>
                 </div>

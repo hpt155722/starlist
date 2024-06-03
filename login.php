@@ -1,5 +1,6 @@
 <?php
-include 'utilities/connection.php'; ?>
+    include 'utilities/connection.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +21,7 @@ include 'utilities/connection.php'; ?>
     <script src="login.js"></script>
 
 </head>
-<body onload = 'onload();'>
+<body>
     <!-- LOADING SCREEN -->
     <div class = 'loadingContainer' style = 'display: none'>
         <img class = 'loadingLogo' src = 'resources/images/loadingStar.gif'>
