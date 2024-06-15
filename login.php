@@ -29,7 +29,7 @@
 
 
     <div class = 'contentBox'>
-        <img class = 'logo' src = 'resources/images/starlistLogo.png'>
+        <img class = 'logo' src = 'resources/images/stardustLogo.png'>
         <!-- LOGIN CONTAINER -->
         <div class = 'loginBox'>
             <input class = 'usernameBox' maxlength = "20" placeholder = 'enter your username'></input>
@@ -60,9 +60,13 @@
 
     <!-- STARS -->
 
-    <img class = 'star star1 rotate-center' src = 'resources/images/pinkYellowStar.png'>
-    <img class = 'star star2 rotate-center2' src = 'resources/images/pinkYellowStar.png'>
-    <img class = 'star star3 rotate-center-reverse' src = 'resources/images/pinkYellowStar.png'>
+    <img class = 'star1 rotate-center' src = 'resources/images/pinkStar.png'>
+    <img class = 'star2 rotate-center2' src = 'resources/images/pinkStar.png'>
+    <img class = 'star3 rotate-reverse' src = 'resources/images/pinkStar.png'>
+
+    <img class = 'starOnString1 slide-bottom1' src = 'resources/images/starOnString1.png'>
+    <img class = 'starOnString2 slide-up' src = 'resources/images/starOnString2.png'>
+    <img class = 'starOnString3 slide-bottom2' src = 'resources/images/starOnString3.png'>
 
 </body>
 </html>

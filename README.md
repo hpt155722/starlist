@@ -1,6 +1,6 @@
-# starlist 
+# stardust 
 
-Starlist is an app designed to help shoppers create a shopping list while also providing comparisons of unit prices across various stores. Its primary goal is to determine which store offers the lowest unit price for each item.
+stardust is a social media app. Currently in progress.
 
 <br>
 
@@ -14,8 +14,8 @@ Starlist is an app designed to help shoppers create a shopping list while also p
 ☆ mySQL <br>
 <br>
 
+<!--
 ### ☆ ───── Features ───── ☆
-
  <br>
 ☆ Create, edit, delete items <br>
 ☆ Add prices from different stores<br>
@@ -41,4 +41,4 @@ Starlist is an app designed to help shoppers create a shopping list while also p
 ### ☆ ───── Future enhancements ───── ☆
 
  <br>
-☆ Multiple Lists <br> 
+☆ Multiple Lists <br>  -->
