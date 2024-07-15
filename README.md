@@ -1,35 +1,29 @@
-# stardust 
+# starlist 
 
-stardust is a social media app. Currently in progress.
+Starlist is an app designed to help shoppers create a shopping list while also providing comparisons of unit prices across various stores. Its primary goal is to determine which store offers the lowest unit price for each item.
+
+-------- PROJECT CURRENTLY IN PROGRESS -------- 
 
 <br>
 
 ### ☆ ───── Technologies ───── ☆
-
-<br>
-☆ HTML <br>
-☆ CSS <br>
-☆ Javascript <br>
-☆ PHP <br>
-☆ mySQL <br>
-<br>
-
-<!--
-### ☆ ───── Features ───── ☆
- <br>
-☆ Create, edit, delete items <br>
-☆ Add prices from different stores<br>
-☆ Automatic unit price calculations<br>
-☆ Automatically show cheapest store to buy from<br>
+@@ -26,25 +24,21 @@ Starlist is an app designed to help shoppers create a shopping list while also p
 ☆ Password encryption<br>
  <br>
-  
+
+<!--
 ### ☆ ───── Screenshots ───── ☆
 
  <br>
 
 
  <div>
+    <img style = "width: 20vh; margin: 5vh;" src = "src/thumbnails/startScreen.png">
+    <img style = "width: 20vh; margin: 5vh;" src = "src/thumbnails/viewSets.png">
+    <img style = "width: 20vh; margin: 5vh;" src = "src/thumbnails/viewCards.png">
+    <img style = "width: 20vh; margin: 5vh;" src = "src/thumbnails/editCard.png">
+    <img style = "width: 20vh; margin: 5vh;" src = "src/thumbnails/newCard.png">
+    <img style = "width: 20vh; margin: 5vh;" src = "src/thumbnails/viewQuiz.png">
     <img style = "width: 20vh; margin: 5vh;" src = "resources/thumbnails/loginPage.png">
     <img style = "width: 20vh; margin: 5vh;" src = "resources/thumbnails/signupPage.png">
     <img style = "width: 20vh; margin: 5vh;" src = "resources/thumbnails/home.png">
@@ -37,8 +31,11 @@ stardust is a social media app. Currently in progress.
     <img style = "width: 20vh; margin: 5vh;" src = "resources/thumbnails/editItem.png">
 </div>
  <br>
- 
+
 ### ☆ ───── Future enhancements ───── ☆
 
  <br>
-☆ Multiple Lists <br>  -->
+☆ Online function <br>
+☆ Mass edit cards <br>
+ -->
+☆ Multiple Lists <br> 
