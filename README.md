@@ -18,7 +18,6 @@ Starlist is an app designed to help shoppers create a shopping list while also p
 • **Shopping List Creation:** Easily add and manage items on your shopping list.
 <br>
 • **Price Comparison:** Automatically calculates the unit prices and compare the various stores inputted to find the lowest unit price. <br>
-• **User-Friendly Interface:** Navigate through a clean an d modern design. <br>
 <br>
 
 ### ☆ ──── Screenshots ──── ☆
